@@ -1,0 +1,32 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>spring-example</artifactId>
+        <groupId>by.academy.it</groupId>
+        <version>1.0</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>L06-transactions</artifactId>
+    <packaging>pom</packaging>
+
+    <name>L06-transactions</name>
+    <url>http://maven.apache.org</url>
+    <modules>
+        <module>transaction-programmatic</module>
+        <module>transaction-declaring-xml</module>
+        <module>transaction-declaring-annotation</module>
+    </modules>
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-aop</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjweaver</artifactId>
+            <version>${aspect.version}</version>
+        </dependency>
+    </dependencies>
+</project>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p" xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+   <context:annotation-config/>
+   <bean id="address" class="by.academy.it.beans.Address" scope="prototype"
+         p:id="1" p:city="#{'Minsk'}" p:street="Sadovaya" p:flat="15"
+         p:country="Belarus" p:email="yulij@tut.by">
+   </bean>
+
+   <bean id="eb" class="by.academy.it.beans.ExpressionBean"
+         p:pi="#{T(java.lang.Math).PI}"
+         p:multiplier="#{T(java.lang.Math).PI}"
+         p:a="#{address.flat+3}"
+         p:b="#{4}"
+         p:value="#{'Hello'}"
+         p:count="#{T(java.lang.Math).PI * 100^2}"
+         p:logic="#{address.country != null ? false : true}"
+         p:elvis="#{address.country ?: 'Namibia'}"
+         p:regexp="#{address.email matches '[a-zA-Z0-9.%+-]+@[a-zA-Z0-9.-]+.by'}">
+   </bean>
+
+   <util:list id="people">
+      <bean class="by.academy.it.beans.Person" p:id="1" p:beanName="Yuli" p:surname="Slabko"/>
+      <bean class="by.academy.it.beans.Person" p:id="2" p:beanName="Igor" p:surname="Wong"/>
+      <bean class="by.academy.it.beans.Person" p:id="3" p:beanName="Taya" p:surname="Smith"/>
+      <bean class="by.academy.it.beans.Person" p:id="4" p:beanName="Kim" p:surname="Won"/>
+   </util:list>
+
+   <bean id="collectionBean" class="by.academy.it.beans.CollectionBean"
+         p:names="Jack" p:cars="#{'Audi'}"
+         p:persons="#{people.$[id gt 1]}"/>
+
+      <!--<list>-->
+      <!--<bean class="by.academy.it.beans.Person" p:id="1" p:beanName="Yuli" p:surname="Slabko"/>-->
+      <!--<bean class="by.academy.it.beans.Person" p:id="2" p:beanName="Igor" p:surname="Wong"/>-->
+      <!--<bean class="by.academy.it.beans.Person" p:id="3" p:beanName="Taya" p:surname="Smith"/>-->
+      <!--</list>-->
+      <!--</property>-->
+
+
+   <!--<util:list id="addresses">
+      <bean class="by.academy.it.beans.Address" p:id="5" p:city="Minsk" p:country="Belarus" p:street="Gaya"/>
+      <bean class="by.academy.it.beans.Address" p:id="2" p:city="Minsk" p:country="Belarus" p:street="Skorini"/>
+      <bean class="by.academy.it.beans.Address" p:id="3" p:city="Tokio" p:country="Japan" p:street="Yoni"/>
+      <bean class="by.academy.it.beans.Address" p:id="4" p:city="Gon-Kong" p:country="China" p:street="Guandon"/>
+   </util:list>
+   <bean id="personBean" class="by.academy.it.beans.Person"
+         p:beanName="#{people[0].beanName}" p:surname="#{people[0].surname}"
+         p:address="#{addresses[0]}" p:id="#{people[0].id}"/>
+
+   <bean id="personMaxId" class="by.academy.it.beans.Bean"
+         p:person="#{people?[id gt ]}"/>-->
+    
+<!--    <bean id="constructor" class="by.academy.it.beans.ConstructorBean" init-method="initMethod">
+        <constructor-arg index="1" type="java.lang.Integer" value="34"/>
+        <constructor-arg index="0" value="Yuli"/>
+    </bean>-->
+</beans>
+
+
+

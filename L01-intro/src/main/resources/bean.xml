@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+    <!--<context:annotation-config />-->
+
+    <bean id="address" class="by.academy.it.beans.Address" scope="prototype"
+          p:id="1" p:city="#{'Minsk'}" p:street="Sadovaya"
+          p:country="Belarus">
+    </bean>
+
+<!--    <bean id="companyAddress" class="by.academy.it.beans.CompanyAddress" scope="prototype"
+          p:id="1" p:street="Kuprevicha" p:home="4"
+          p:email="yuli@exadel.com">
+    </bean>-->
+    <!--Non Autowired  -->
+    <!--<bean id="person" class="by.academy.it.beans.Person"-->
+          <!--p:id="1" p:surname="#{'Slabko'}" p:beanName="Yuli">-->
+    <!--</bean>-->
+
+    <bean id="person" class="by.academy.it.beans._Person" autowire="default"
+          p:id="1" p:surname="#{'Slabko'}" p:beanName="Yuli" autowire-candidate="default">
+    </bean>
+</beans>
