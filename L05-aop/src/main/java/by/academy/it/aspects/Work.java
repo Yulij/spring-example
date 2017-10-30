@@ -1,14 +1,3 @@
-/*
- * Copyright (C) 2014 GHX, Inc.
- *  Louisville, Colorado, USA.
- *  All rights reserved.
- *
- *  Warning: Unauthorized reproduction or distribution of this program, or
- *  any portion of it, may result in severe civil and criminal penalties,
- *  and will be prosecuted to the maximum extent possible under the law.
- *
- *  Created on 001 01.08.2014
- */
 package by.academy.it.aspects;
 
 import org.aspectj.lang.ProceedingJoinPoint;
@@ -21,7 +10,6 @@ import org.aspectj.lang.annotation.Pointcut;
 import org.springframework.stereotype.Component;
 
 @Aspect
-@Component
 public class Work {
     @Pointcut("execution(* by.academy.it.aspects.TaskService.performJob())")
     public void performance() {

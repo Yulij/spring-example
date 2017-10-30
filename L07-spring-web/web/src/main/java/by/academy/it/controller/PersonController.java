@@ -4,6 +4,7 @@ import by.academy.it.entity.Person;
 import by.academy.it.services.IPersonService;
 import org.apache.commons.io.FileUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.support.ResourceBundleMessageSource;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -33,9 +34,11 @@ public class PersonController {
         return MAIN;
     }
 
-    @PostMapping(value = "/add")
+    @PostMapping(value = "/add/{id}")
     public String addPerson(ModelMap model,
-                            @Valid Person person, BindingResult br) {
+                            @Valid Person person, BindingResult br,
+                            @RequestParam(value = "t", defaultValue = "T") String t,
+                            @PathVariable(value = "id") Long id) {
         if (!br.hasErrors()) {
             if (person != null) {
                 person = personService.create(person);
@@ -77,7 +80,7 @@ public class PersonController {
 
     @RequestMapping(value = "/download/image", method = RequestMethod.GET)
     public ResponseEntity<byte[]> download(@RequestParam(value = "name") String fileName) {
-        File file = new File("resources/" + fileName);
+        File file = new File("/resources/" + fileName);
         if (file.exists()) {
             byte[] content = new byte[0];
             try {
@@ -113,7 +116,7 @@ public class PersonController {
     }
 
     private void saveImage(String filename, MultipartFile image) throws IOException {
-        File file = new File("resources/" + filename + ".jpg");
+        File file = new File("/resources/" + filename + ".jpg");
         FileUtils.writeByteArrayToFile(file, image.getBytes());
     }
 }

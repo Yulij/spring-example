@@ -24,7 +24,7 @@
 </head>
 <body>
 <div style="float: right;">
-    <a href="page?locale=ru" style="padding: 5px">RU</a>
+    <a href="/page?locale=ru" style="padding: 5px">RU</a>
     <a href="page?locale=en" style="padding: 5px">EN</a>
 </div>
 <tiles:insertAttribute name="header"/>

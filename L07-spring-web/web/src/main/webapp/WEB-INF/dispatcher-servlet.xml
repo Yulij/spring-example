@@ -11,9 +11,8 @@
                            http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 
     <import resource="classpath*:beans-services.xml"/>
-    <import resource="classpath*:beans-dao.xml"/>
     <mvc:resources mapping="/resources/**" location="assests"/>
-    <mvc:default-servlet-handler />
+    <mvc:default-servlet-handler/>
     <mvc:annotation-driven/>
     <context:component-scan base-package="by.academy.it.controller"/>
     <bean id="tilesConfigurer"
