@@ -11,6 +11,7 @@
         <module>L06-transactions</module>
         <module>L07-spring-data</module>
         <module>L05-aop</module>
+        <module>L07-spring-web</module>
     </modules>
     <packaging>pom</packaging>
     <properties>
@@ -22,14 +23,6 @@
         <compiler.version>3.7.0</compiler.version>
         <junit.version>4.12</junit.version>
     </properties>
-    <repositories>
-        <repository>
-            <id>JBoss</id>
-            <layout>default</layout>
-            <url>http://repository.jboss.org/maven2</url>
-        </repository>
-    </repositories>
-
     <build>
         <finalName>spring-example</finalName>
         <plugins>
