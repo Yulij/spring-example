@@ -2,6 +2,8 @@ package by.academy.it.rest.services;
 
 import java.io.Serializable;
 
+import javax.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,13 +12,10 @@ import lombok.NoArgsConstructor;
 
 @NoArgsConstructor
 @Service
+@Transactional
 public class BaseService<T> implements IService<T> {
-    private Dao<T> baseDao;
-
     @Autowired
-    public BaseService(Dao<T> baseDao) {
-        this.baseDao = baseDao;
-    }
+    private Dao<T> baseDao;
 
     @Override
     public T add(T t) {

@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import by.academy.it.rest.entity.Person;
-import by.academy.it.rest.services.PersonService;
+import by.academy.it.rest.services.IPersonService;
 
 /**
  * Created by yslabko on 02/24/2016.
@@ -26,7 +26,7 @@ import by.academy.it.rest.services.PersonService;
 @RequestMapping("/persons")
 public class PersonRestController {
     @Autowired
-    private PersonService personService;
+    private IPersonService personService;
     @GetMapping(value = "")
     public ResponseEntity<List<Person>> getPersons() {
         List<Person> products = personService.getPersons();
@@ -41,12 +41,12 @@ public class PersonRestController {
     }
     @PostMapping(value = "")
     public ResponseEntity<Person> addPerson(Person person) {
-        Person newPerson = personService.add(person);
+        Person newPerson = personService.create(person);
         return new ResponseEntity<>(newPerson, HttpStatus.CREATED);
     }
     @PutMapping(value = "/{id}" )
     public ResponseEntity<Person> updatePersons(
-            @PathVariable("id") Integer id,
+            @PathVariable("id") Long id,
             @RequestBody Person newPerson) {
         Person product = personService.get(id);
         if (product == null) {
@@ -60,7 +60,7 @@ public class PersonRestController {
     }
     @DeleteMapping(value = "/{id}")
     @ResponseStatus(HttpStatus.OK)
-    public void deletePerson(@PathVariable("id") Integer id) {
+    public void deletePerson(@PathVariable("id") Long id) {
         personService.delete(id);
     }
 }

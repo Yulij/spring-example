@@ -27,7 +27,8 @@ public class Person {
     private Integer age;
     
     @Column(name = "NAME")
-    @Pattern(regexp="^[A-Z]+[a-z]+$", message="Username must be alphanumeric with no spaces and first capital")
+    @Pattern(regexp="^[A-Z]+[a-z]+$",
+            message="Username must be alphanumeric with no spaces and first capital")
     private String name;
     
     @Column(name = "SURNAME")

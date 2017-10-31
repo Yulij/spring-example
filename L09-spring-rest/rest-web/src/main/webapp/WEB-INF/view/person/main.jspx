@@ -4,7 +4,10 @@
           xmlns:spring="http://www.springframework.org/tags"
           xmlns="http://www.w3.org/1999/xhtml" version="2.0">
 
-    <spring:message code="page.person.title" arguments="{arg1, arg2}"/>
+    <spring:message code="page.person.title"/>
+    <script type="text/javascript">
+      var restUrl = '${pageContext.request.contextPath}/persons';
+   </script>
 
     <div style="font-size: large">
         <c:if test="${not empty message}">
@@ -19,16 +22,24 @@
             <table>
                 <tr>
                     <th><label>Person image:</label></th>
-                    <td><input name="avatar" type="file"><jsp:text/></input></td>
-                    <td><input id="uploadButton" type="submit" value="Upload image"><jsp:text/></input></td>
+                    <td><input name="avatar" type="file">
+                        <jsp:text/>
+                    </input></td>
+                    <td><input id="uploadButton" type="submit" value="Upload image">
+                        <jsp:text/>
+                    </input></td>
                 </tr>
             </table>
         </s:form>
-
-        <c:forEach var="person1" items="${persons}" varStatus="status">
-            <br/>${status.count}. Name : ${person1.name} Surname: ${person1.surname}
-        </c:forEach>
     </div>
+    <div>
+      <spring:message code="person.table.header"/>
+      <div class = "personTable">
+         <c:forEach var="person" items="${persons}" varStatus="status">
+            <div id="${person.id}">${person.name}  ${person.surname}  ${person.age}</div>
+         </c:forEach>
+      </div>
+   </div>
 
     <div>
         <input id="addPerson" type="button" value="Add person"/>
@@ -40,17 +51,20 @@
     <s:form id="personForm" name="person" action="" style="display: none" modelAttribute="person" method="post">
         <fieldset>
             <label for="name">Person Name</label>
-            <s:errors path="name" cssStyle="color: red" />
+            <s:errors path="name" cssStyle="color: red"/>
             <s:input id="name" type="text" value="" maxlength="20" path="name"/><br/>
             <label for="name">Surname</label>
-            <s:errors path="surname" cssStyle="color: red" />
+            <s:errors path="surname" cssStyle="color: red"/>
             <s:input id="surname" type="text" value="" maxlength="20" path="surname" placeholder="Person Surname"/><br/>
             <label for="age">Age</label>
-            <s:errors path="age" cssStyle="color: red" />
+            <s:errors path="age" cssStyle="color: red"/>
             <s:input id="age" type="text" path="age" value="" maxlength="3" placeholder="Person Age"/><br/>
             <s:input id="personId" type="hidden" path="id" value="" maxlength="3"/><br/>
-            <input id="personButton" type="submit" value=""/><br/>
+            <input id="personButton" type="submit" value="Add person Submit Form"/><br/>
         </fieldset>
+        <input id="personUpdate" type="button" value="Update Person"/>
+        <input id="personAdd" type="button" value="Add Person"/>
+        <input id="personDelete" type="button" value="Delete Person"/>
     </s:form>
 
 </jsp:root>

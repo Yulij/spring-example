@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository()
-public class PersonDaoImpl extends BaseDao<Person> implements PersonDao<Person> {
+public class PersonDaoImpl extends BaseDao<Person> implements PersonDao {
 
     public PersonDaoImpl(){
         super();
