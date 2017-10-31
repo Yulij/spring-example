@@ -3,11 +3,13 @@ package by.academy.it.rest.services;
 import java.io.Serializable;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import by.academy.it.rest.dao.Dao;
 import lombok.NoArgsConstructor;
 
 @NoArgsConstructor
+@Service
 public class BaseService<T> implements IService<T> {
     private Dao<T> baseDao;
 

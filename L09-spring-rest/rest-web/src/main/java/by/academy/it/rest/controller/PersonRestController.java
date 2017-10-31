@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import by.academy.it.rest.entity.Person;
-import by.academy.it.services.PersonService;
+import by.academy.it.rest.services.PersonService;
 
 /**
  * Created by yslabko on 02/24/2016.

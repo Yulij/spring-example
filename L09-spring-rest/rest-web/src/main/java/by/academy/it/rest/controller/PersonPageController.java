@@ -1,7 +1,7 @@
 package by.academy.it.rest.controller;
 
 import by.academy.it.rest.entity.Person;
-import by.academy.it.services.IPersonService;
+import by.academy.it.rest.services.IPersonService;
 import org.apache.commons.io.FileUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;

@@ -1,4 +1,4 @@
-package by.academy.it.rest.entity;
+package by.academy.it.entity;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;

@@ -10,7 +10,7 @@ http://www.springframework.org/schema/context/spring-context-3.0.xsd
 http://www.springframework.org/schema/tx
 http://www.springframework.org/schema/tx/spring-tx-3.0.xsd">
     <import resource="classpath*:beans-dao.xml"/>
-    <context:component-scan base-package="by.academy.it.services"/>
+    <context:component-scan base-package="by.academy.it.rest.services"/>
     <bean id="txManager" class="org.springframework.orm.jpa.JpaTransactionManager">
         <property name="entityManagerFactory" ref="entityManagerFactory"/>
     </bean>

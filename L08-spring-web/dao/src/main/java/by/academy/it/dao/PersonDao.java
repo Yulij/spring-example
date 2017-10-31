@@ -1,4 +1,4 @@
-package by.academy.it.rest.dao;
+package by.academy.it.dao;
 
 import java.util.List;
 

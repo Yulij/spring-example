@@ -1,4 +1,4 @@
-package by.academy.it.rest.dao.impl;
+package by.academy.it.dao.impl;
 
 import by.academy.it.rest.dao.Dao;
 import lombok.Getter;
