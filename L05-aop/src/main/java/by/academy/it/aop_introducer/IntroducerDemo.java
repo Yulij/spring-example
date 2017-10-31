@@ -11,8 +11,8 @@ public class IntroducerDemo {
 
     public static void main(String[] args) {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("aspects_introducer.xml");
-        DoExtendedTask doExtendedTask = context.getBean("extended", DoExtendedTask.class);
-        ((DoTask)doExtendedTask).doMainJob();
-        doExtendedTask.doExtraJob();
+        DoTask doTask = context.getBean("taskService", DoTask.class);
+        doTask.doMainJob();
+        ((DoExtendedTask)doTask).doExtraJob();
     }
 }

@@ -9,6 +9,9 @@
 
     <artifactId>L05-aop</artifactId>
     <packaging>jar</packaging>
+    <properties>
+        <aspectj.version>1.8.12</aspectj.version>
+    </properties>
 
     <name>L05-aop</name>
     <dependencies>
@@ -20,29 +23,17 @@
         <dependency>
             <groupId>org.aspectj</groupId>
             <artifactId>aspectjweaver</artifactId>
-            <version>${aspect.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.aspectj</groupId>
-            <artifactId>aspectjtools</artifactId>
-            <version>1.8.12</version>
+            <version>${aspectj.version}</version>
         </dependency>
         <dependency>
             <groupId>org.aspectj</groupId>
             <artifactId>aspectjrt</artifactId>
-            <version>1.8.12</version>
+            <version>${aspectj.version}</version>
         </dependency>
         <dependency>
             <groupId>cglib</groupId>
             <artifactId>cglib</artifactId>
             <version>3.2.5</version>
         </dependency>
-
-
-        <!--<dependency>-->
-            <!--<groupId>aopalliance</groupId>-->
-            <!--<artifactId>aopalliance</artifactId>-->
-            <!--<version>1.0</version>-->
-        <!--</dependency>-->
     </dependencies>
 </project>
