@@ -1,13 +1,13 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
    <parent>
-      <artifactId>L08-spring-web</artifactId>
+      <artifactId>L09-spring-rest</artifactId>
       <groupId>by.academy.it</groupId>
       <version>1.0</version>
    </parent>
 
    <modelVersion>4.0.0</modelVersion>
-   <artifactId>web</artifactId>
+   <artifactId>web-rest</artifactId>
    <packaging>war</packaging>
    <version>1.0</version>
 
@@ -22,6 +22,6 @@
    </dependencies>
 
    <build>
-      <finalName>web</finalName>
+      <finalName>web-rest</finalName>
    </build>
 </project>

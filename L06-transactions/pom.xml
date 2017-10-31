@@ -17,16 +17,4 @@
         <module>transaction-declaring-xml</module>
         <module>transaction-declaring-annotation</module>
     </modules>
-    <dependencies>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-aop</artifactId>
-            <version>${spring.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.aspectj</groupId>
-            <artifactId>aspectjweaver</artifactId>
-            <version>${aspect.version}</version>
-        </dependency>
-    </dependencies>
 </project>

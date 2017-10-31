@@ -3,11 +3,11 @@ package by.academy.it.aop;
 import org.springframework.aop.framework.ProxyFactory;
 
 /**
- * Class BuyBuyMoney
+ * Class ProxyDemo
  *
  * Created by yslabko on 04/13/2017.
  */
-public class BuyBuyMoney {
+public class ProxyDemo {
     private static TransferService target;
     private static TransferService proxy;
     public static void init() {

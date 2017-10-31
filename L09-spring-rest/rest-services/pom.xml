@@ -1,17 +1,23 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>spring-example</artifactId>
+        <artifactId>L09-spring-rest</artifactId>
         <groupId>by.academy.it</groupId>
         <version>1.0</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>L05-aop</artifactId>
+    <artifactId>services</artifactId>
     <packaging>jar</packaging>
-    <properties>
-        <aspectj.version>1.8.12</aspectj.version>
-    </properties>
 
-    <name>L05-aop</name>
+    <name>services</name>
+
+    <dependencies>
+        <dependency>
+            <groupId>by.academy.it</groupId>
+            <artifactId>dao</artifactId>
+            <version>1.0</version>
+        </dependency>
+    </dependencies>
+
 </project>

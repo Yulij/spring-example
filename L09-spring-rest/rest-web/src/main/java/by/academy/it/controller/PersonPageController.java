@@ -22,7 +22,7 @@ import java.util.List;
 
 @Controller
 @RequestMapping("/persons")
-public class PersonController {
+public class PersonPageController {
 
     private static final String MAIN = "persons/main";
     @Autowired
@@ -36,8 +36,8 @@ public class PersonController {
 
     @PostMapping(value = "/add")
     public String addPerson(ModelMap model,
-                            @Valid Person person, BindingResult br
-                            /*@RequestParam(value = "t", defaultValue = "T") String t,
+                            @Valid Person person, BindingResult br/*,
+                            @RequestParam(value = "t", defaultValue = "T") String t,
                             @PathVariable(value = "id") Long id*/) {
         if (!br.hasErrors()) {
             if (person != null) {
