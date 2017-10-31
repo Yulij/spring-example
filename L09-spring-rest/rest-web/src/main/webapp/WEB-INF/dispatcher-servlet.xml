@@ -14,7 +14,7 @@
     <mvc:resources mapping="/resources/**" location="assests"/>
     <mvc:default-servlet-handler/>
     <mvc:annotation-driven/>
-    <context:component-scan base-package="by.academy.it.controller"/>
+    <context:component-scan base-package="by.academy.it.rest.controller"/>
     <bean id="tilesConfigurer"
           class="org.springframework.web.servlet.view.tiles3.TilesConfigurer">
         <property name="definitions">

@@ -9,7 +9,7 @@ import org.springframework.transaction.TransactionStatus;
 import org.springframework.transaction.support.TransactionCallback;
 import org.springframework.transaction.support.TransactionTemplate;
 
-import by.academy.it.dao.Dao;
+import by.academy.it.rest.dao.Dao;
 
 @Service
 public class BaseServiceImpl<T> implements IService<T> {

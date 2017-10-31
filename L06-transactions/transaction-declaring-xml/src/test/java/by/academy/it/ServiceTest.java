@@ -1,6 +1,6 @@
 package by.academy.it;
 
-import by.academy.it.entity.Employee;
+import by.academy.it.rest.entity.Employee;
 import by.academy.it.services.EmployeeService;
 import org.junit.Assert;
 import org.junit.Test;

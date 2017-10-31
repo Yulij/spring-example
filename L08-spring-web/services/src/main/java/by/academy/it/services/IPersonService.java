@@ -1,6 +1,6 @@
 package by.academy.it.services;
 
-import by.academy.it.entity.Person;
+import by.academy.it.rest.entity.Person;
 
 import java.util.List;
 

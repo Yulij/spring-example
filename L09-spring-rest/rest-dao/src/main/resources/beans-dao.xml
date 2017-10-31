@@ -7,7 +7,7 @@
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 
-    <context:component-scan base-package="by.academy.it.dao"/>
+    <context:component-scan base-package="by.academy.it.rest.dao"/>
 
     <bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource">
         <property name="url" value="jdbc:mysql://localhost:3306/spring_web?createDatabaseIfNotExist=true"/>
@@ -19,7 +19,7 @@
     </bean>
     <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
         <property name="dataSource" ref="dataSource"/>
-        <property name="packagesToScan" value="by.academy.it.entity"/>
+        <property name="packagesToScan" value="by.academy.it.rest.entity"/>
         <property name="jpaVendorAdapter">
             <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter"/>
         </property>

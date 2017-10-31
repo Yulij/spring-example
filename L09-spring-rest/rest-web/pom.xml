@@ -7,21 +7,21 @@
    </parent>
 
    <modelVersion>4.0.0</modelVersion>
-   <artifactId>web-rest</artifactId>
+   <artifactId>rest-web</artifactId>
    <packaging>war</packaging>
    <version>1.0</version>
 
-   <name>web</name>
+   <name>rest-web</name>
 
    <dependencies>
       <dependency>
          <groupId>by.academy.it</groupId>
-         <artifactId>services</artifactId>
+         <artifactId>rest-services</artifactId>
          <version>1.0</version>
       </dependency>
    </dependencies>
 
    <build>
-      <finalName>web-rest</finalName>
+      <finalName>rest-web</finalName>
    </build>
 </project>

@@ -7,7 +7,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>services</artifactId>
+    <artifactId>rest-services</artifactId>
     <packaging>jar</packaging>
 
     <name>services</name>
@@ -15,7 +15,7 @@
     <dependencies>
         <dependency>
             <groupId>by.academy.it</groupId>
-            <artifactId>dao</artifactId>
+            <artifactId>rest-dao</artifactId>
             <version>1.0</version>
         </dependency>
     </dependencies>

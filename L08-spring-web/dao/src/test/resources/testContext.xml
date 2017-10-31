@@ -50,7 +50,7 @@ http://www.springframework.org/schema/aop http://www.springframework.org/schema/
 
 	<tx:annotation-driven transaction-manager="txManager"/>
 	
-	<bean id="personDao" class="by.academy.it.dao.impl.PersonDaoImpl">
+	<bean id="personDao" class="by.academy.it.rest.dao.impl.PersonDaoImpl">
 		<constructor-arg ref="sessionFactory"/>
 	</bean>
 
