@@ -16,5 +16,6 @@
         <module>transaction-programmatic</module>
         <module>transaction-declaring-xml</module>
         <module>transaction-declaring-annotation</module>
+        <module>transaction-global</module>
     </modules>
 </project>

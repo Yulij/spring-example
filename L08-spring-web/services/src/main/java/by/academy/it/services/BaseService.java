@@ -1,6 +1,6 @@
 package by.academy.it.services;
 
-import by.academy.it.rest.dao.Dao;
+import by.academy.it.dao.Dao;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.io.Serializable;

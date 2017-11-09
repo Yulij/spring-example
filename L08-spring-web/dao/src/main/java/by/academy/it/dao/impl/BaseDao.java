@@ -1,6 +1,6 @@
 package by.academy.it.dao.impl;
 
-import by.academy.it.rest.dao.Dao;
+import by.academy.it.dao.Dao;
 import lombok.Getter;
 import org.springframework.stereotype.Repository;
 

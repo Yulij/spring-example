@@ -11,6 +11,8 @@ import by.academy.it.springdata.entities.Cat;
 import by.academy.it.springdata.repository.CatCrudRepository;
 import by.academy.it.springdata.repository.CatJpaRepository;
 
+import java.util.Optional;
+
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("/test-data.xml")
 public class CatJpaTest {
@@ -34,6 +36,7 @@ public class CatJpaTest {
         cat.setName("New name" +cat.getName());
         catRepository.saveAndFlush(cat);
         Cat newCat = catRepository.getOne(1L);
+        catRepository.findById(1L).orElse(new Cat());
         System.out.println(newCat);
     }
 }

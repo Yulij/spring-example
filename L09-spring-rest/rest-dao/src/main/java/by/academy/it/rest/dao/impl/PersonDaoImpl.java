@@ -18,4 +18,11 @@ public class PersonDaoImpl extends BaseDao<Person> implements PersonDao {
     public List<Person> getPersons() {
         return getEm().createQuery("from Person").getResultList();
     }
+
+    @Override
+    public List<Person> getPersons(String name) {
+        return getEm().createQuery("from Person where name=:name")
+                .setParameter("name", name)
+                .getResultList();
+    }
 }

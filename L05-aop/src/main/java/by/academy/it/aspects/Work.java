@@ -10,7 +10,7 @@ import org.aspectj.lang.annotation.Pointcut;
 import org.springframework.stereotype.Component;
 
 @Aspect
-public   class Work {
+public class Work {
     @Pointcut("execution(* by.academy.it.aspects.TaskService.performJob())")
     public void performance() {
 

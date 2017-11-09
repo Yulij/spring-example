@@ -9,4 +9,5 @@ import by.academy.it.rest.entity.Person;
  */
 public interface PersonDao extends Dao<Person> {
     List<Person> getPersons();
+    List<Person> getPersons(String name);
 }

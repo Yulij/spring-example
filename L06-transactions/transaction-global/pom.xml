@@ -7,8 +7,21 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>transaction-declaring-annotation</artifactId>
+    <artifactId>transaction-global</artifactId>
     <packaging>jar</packaging>
 
-    <name>transaction-declaring-annotation</name>
+    <name>transaction-global</name>
+    <dependencies>
+        <dependency>
+            <groupId>com.atomikos</groupId>
+            <artifactId>transactions-jdbc</artifactId>
+            <version>4.0.4</version>
+        </dependency>
+        <dependency>
+			<groupId>com.atomikos</groupId>
+			<artifactId>transactions</artifactId>
+			<version>4.0.4</version>
+		</dependency>
+    </dependencies>
+
 </project>

@@ -1,6 +1,6 @@
 package by.academy.it.rest.controller;
 
-import by.academy.it.rest.entity.Person;
+import by.academy.it.entity.Person;
 import by.academy.it.services.IPersonService;
 import org.apache.commons.io.FileUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,12 +35,12 @@ public class PersonController {
 
     @PostMapping(value = "/add")
     public String addPerson(ModelMap model,
-                            @Valid Person person, BindingResult br
-                            /*@RequestParam(value = "t", defaultValue = "T") String t,
-                            @PathVariable(value = "id") Long id*/) {
+                            @Valid Person person, BindingResult br/*,
+                            @RequestParam(value = "t", defaultValue = "T") String text,
+                            @PathVariable(value = "id") Long personId*/) {
         if (!br.hasErrors()) {
+            person = personService.create(person);
             if (person != null) {
-                person = personService.create(person);
                 model.put("person", person);
             }
         }

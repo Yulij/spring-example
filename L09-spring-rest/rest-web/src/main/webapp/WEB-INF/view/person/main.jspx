@@ -6,8 +6,8 @@
 
     <spring:message code="page.person.title"/>
     <script type="text/javascript">
-      var restUrl = '${pageContext.request.contextPath}/persons';
-   </script>
+        var restUrl = '${pageContext.request.contextPath}/persons';
+    </script>
 
     <div style="font-size: large">
         <c:if test="${not empty message}">
@@ -33,13 +33,13 @@
         </s:form>
     </div>
     <div>
-      <spring:message code="person.table.header"/>
-      <div class = "personTable">
-         <c:forEach var="person" items="${persons}" varStatus="status">
-            <div id="${person.id}">${person.name}  ${person.surname}  ${person.age}</div>
-         </c:forEach>
-      </div>
-   </div>
+        <spring:message code="person.table.header"/>
+        <div class="personTable" id="personTable">
+            <c:forEach var="person" items="${persons}" varStatus="status">
+                <div id="${person.id}">${person.name}  ${person.surname}  ${person.age}</div>
+            </c:forEach>
+        </div>
+    </div>
 
     <div>
         <input id="addPerson" type="button" value="Add person"/>

@@ -9,7 +9,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
-@Data @NoArgsConstructor @AllArgsConstructor @ToString
+@Data @NoArgsConstructor @AllArgsConstructor
 @Entity
 public class Cat {
     @Id @GeneratedValue

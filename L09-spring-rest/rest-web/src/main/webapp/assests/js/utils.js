@@ -6,13 +6,13 @@ $(document).ready(function () {
 		deletePerson();
 	});
 	$('#personAdd').click(function () {
-		addProduct();
+		addRestPerson();
 	});
 	$('#personUpdate').click(function () {
-		updateProduct();
+		updatePerson();
 	});
 	$('#personDelete').click(function () {
-		deleteProduct();
+		deletePerson();
 	});
 });
 
@@ -28,7 +28,7 @@ function deletePerson() {
 	$('#personForm').show();
 }
 
-function addProduct() {
+function addRestPerson() {
     var name = $("#name").val();
     var surname = $("#surname").val();
     var age = $("#age").val();
@@ -45,7 +45,7 @@ function addProduct() {
             url: restUrl
         }).done(function(data) {
             var el = '<div id="' + data.id + '">'+ data.name +'    '+data.surname+'    '+data.age+'</div>';
-            $(".personTable").append(el);
+            $("#personTable").append(el);
         }).fail(function(data){
             if ( console && console.log ) {
                 console.log( "Error data:", data);

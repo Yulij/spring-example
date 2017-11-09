@@ -1,7 +1,7 @@
-package by.academy.it.rest.dao;
+package by.academy.it.dao;
 
-import by.academy.it.rest.dao.impl.PersonDaoImpl;
-import by.academy.it.rest.entity.Person;
+import by.academy.it.dao.impl.PersonDaoImpl;
+import by.academy.it.entity.Person;
 import org.junit.After;
 import org.junit.Test;
 import org.junit.runner.RunWith;

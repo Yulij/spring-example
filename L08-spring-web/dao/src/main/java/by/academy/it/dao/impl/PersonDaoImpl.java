@@ -1,7 +1,7 @@
 package by.academy.it.dao.impl;
 
-import by.academy.it.rest.dao.PersonDao;
-import by.academy.it.rest.entity.Person;
+import by.academy.it.dao.PersonDao;
+import by.academy.it.entity.Person;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;

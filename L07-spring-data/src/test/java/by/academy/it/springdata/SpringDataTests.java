@@ -38,7 +38,9 @@ public class SpringDataTests {
         Department pm = new Department(null, "PM", null);
         Department al = new Department(null, "AL", null);
         Department buch = new Department(null, "Бухгалтерия", null);
+        Department canc = new Department(null, "Канцелярия", null);
         departmentRepository.save(qa);
+        departmentRepository.save(canc);
         departmentRepository.save(ba);
         departmentRepository.save(hr);
         departmentRepository.save(devOps);
@@ -78,13 +80,17 @@ public class SpringDataTests {
     @Test
 	public void pageableTest() {
         List<Long> ids = Stream.of(2L, 3L, 4L).collect(Collectors.toList());
-        Page<Employee> employeesPage = employeeRepository.findByDepartmentIdIn(ids, PageRequest.of(1, 3, Sort.Direction.DESC, "age"));
+        Page<Employee> employeesPage = employeeRepository
+                .findByDepartmentIdIn(ids, PageRequest.of(1, 3, Sort.Direction.DESC, "age"));
         employeesPage.getContent().forEach(System.out::println);
-        employeesPage = employeeRepository.findByFirstName("Sasha", PageRequest.of(0, 2, Sort.Direction.DESC, "age"));
+        employeesPage = employeeRepository
+                .findByFirstName("Sasha", PageRequest.of(0, 2, Sort.Direction.DESC, "age"));
         employeesPage.getContent().forEach(System.out::println);
-        employeesPage = employeeRepository.findAll(PageRequest.of(0, 2, Sort.Direction.DESC, "age"));
+        employeesPage = employeeRepository
+                .findAll(PageRequest.of(0, 2, Sort.Direction.DESC, "age"));
         employeesPage.getContent().forEach(System.out::println);
-        employeesPage = employeeRepository.findByDepartmentId(2L, PageRequest.of(0, 2, Sort.Direction.DESC, "age"));
+        employeesPage = employeeRepository
+                .findByDepartmentId(2L, PageRequest.of(0, 2, Sort.Direction.DESC, "age"));
         employeesPage.getContent().forEach(System.out::println);
 
         employeeRepository.findAll(new Sort(Sort.Direction.DESC, "department.name")).forEach(System.out::println);
@@ -94,7 +100,7 @@ public class SpringDataTests {
 	public void findByExampleTest() {
         System.out.println(departmentRepository.findOne(Example.of(new Department(null, "Бухгалтерия", null))));
         List<Department> departments = departmentRepository.findAll(
-                Example.of(new Department(null, "терия", null), ExampleMatcher.matching()
+                Example.of(new Department(null, "рия", null), ExampleMatcher.matching()
                         .withIgnoreCase()
                         .withStringMatcher(ExampleMatcher.StringMatcher.ENDING)));
         departments.forEach(System.out::print);

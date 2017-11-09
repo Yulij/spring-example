@@ -5,15 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseStatus;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import by.academy.it.rest.entity.Person;
 import by.academy.it.rest.services.IPersonService;
@@ -28,16 +20,18 @@ public class PersonRestController {
     @Autowired
     private IPersonService personService;
     @GetMapping(value = "")
-    public ResponseEntity<List<Person>> getPersons() {
-        List<Person> products = personService.getPersons();
+    public ResponseEntity<List<Person>> getPersons(
+            @RequestParam(name = "name", required = false, defaultValue = "") String name,
+            @RequestParam(name = "sort", required = false, defaultValue = "") String sort) {
+        List<Person> products = personService.getPersons(name);
         if(products.isEmpty()){ return new ResponseEntity<>(HttpStatus.NO_CONTENT); }
         return new ResponseEntity<>(products, HttpStatus.OK);
     }
     @GetMapping(value = "/{id}")
     public ResponseEntity<Person> getPerson(@PathVariable("id") Long id) {
-        Person product = personService.get(id);
-        if (product == null) { return new ResponseEntity<>(HttpStatus.NOT_FOUND);}
-        return new ResponseEntity<>(product, HttpStatus.OK);
+        Person person = personService.get(id);
+        if (person == null) { return new ResponseEntity<>(HttpStatus.NOT_FOUND);}
+        return new ResponseEntity<>(person, HttpStatus.OK);
     }
     @PostMapping(value = "")
     public ResponseEntity<Person> addPerson(Person person) {
@@ -48,14 +42,14 @@ public class PersonRestController {
     public ResponseEntity<Person> updatePersons(
             @PathVariable("id") Long id,
             @RequestBody Person newPerson) {
-        Person product = personService.get(id);
-        if (product == null) {
+        Person person = personService.get(id);
+        if (person == null) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
-        product.setName(newPerson.getName());
-        product.setSurname(newPerson.getSurname());
-        product.setAge(newPerson.getAge());
-        newPerson = personService.update(product);
+        person.setName(newPerson.getName());
+        person.setSurname(newPerson.getSurname());
+        person.setAge(newPerson.getAge());
+        newPerson = personService.update(person);
         return new ResponseEntity(newPerson, HttpStatus.OK);
     }
     @DeleteMapping(value = "/{id}")

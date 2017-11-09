@@ -37,7 +37,8 @@
         <input id="deletePerson" type="button" value="Delete person"/>
     </div>
     <br/>
-    <s:form id="personForm" name="person" action="" style="display: none" modelAttribute="person" method="post">
+    <s:form id="personForm" name="person" action="" style="display: none"
+            modelAttribute="person" method="post">
         <fieldset>
             <label for="name">Person Name</label>
             <s:errors path="name" cssStyle="color: red" />
