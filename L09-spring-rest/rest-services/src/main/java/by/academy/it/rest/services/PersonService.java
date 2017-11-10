@@ -26,7 +26,7 @@ public class PersonService extends BaseService<Person> implements IPersonService
 
     public Person create(Person person) {
         if (person != null) {
-            return (Person) personDao.add(person);
+            return personDao.add(person);
         }
         return person;
     }

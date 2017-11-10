@@ -39,8 +39,9 @@ function addRestPerson() {
             age: age
         };
         $.ajax({
-            data:person,
-            dataType: "json",
+            data:JSON.stringify(person),
+            dataType: 'json',
+            contentType: "application/json; charset=utf-8",
             type:'post',
             url: restUrl
         }).done(function(data) {
