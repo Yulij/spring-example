@@ -24,14 +24,15 @@ public class TransferService {
     enum Status {
         OK(0, "Success"),
         NOT_ENOUGH_FUNDS(1, "Error. Not enough funds."),
-        ERROR(2, "Error");
-        int code;
-        String value;
+        ERROR(2, "Error"),
+        UNKNOWN(3, "Unknown");
+        private int code;
+        private String value;
         public static String getValueByCode(int code) {
             for (Status status : Status.values()) {
                 if (status.code == code) { return status.value;}
             }
-            return "UNKNOWN STATUS";
+            return UNKNOWN.value;
         }
     }
 }
